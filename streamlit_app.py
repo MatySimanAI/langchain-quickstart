@@ -10,7 +10,7 @@ def generate_response(input_text):
   st.info(llm(input_text))
 
 with st.form('my_form'):
-  text = st.text_area('Enter text:', 'Rewrite in better, not too formal, English:\n')
+  text = st.text_area('Enter text:', 'Rewrite in better, not too formal, English. Then, on a separate paragraph, clearly marked with ***, please explain the reason behind the changes you've made so I can improve next time:\n')
   submitted = st.form_submit_button('Submit')
   if not openai_api_key.startswith('sk-'):
     st.warning('Please enter your OpenAI API key!', icon='⚠')
